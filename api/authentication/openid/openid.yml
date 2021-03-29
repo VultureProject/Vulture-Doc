@@ -1,0 +1,82 @@
+all:
+  get:
+    tags:
+      - Authentication
+    summary: List OpenID Repositories
+    responses:
+      200:
+        description: List of OpenID Repositories
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                type: object
+                $ref: "./definitions/openid.yml"
+
+  post:
+    tags:
+      - Authentication
+    summary: Create an OpenID Repository
+    requestBody:
+      content:
+        application/json:
+          schema:
+            type: object
+            $ref: "./definitions/openid.yml"
+    responses:
+      201:
+        $ref: "../../global/definitions/created.yml"
+      400:
+        $ref: "../../global/definitions/error.yml"
+      500:
+        $ref: "../../global/definitions/error.yml"
+
+one:
+  get:
+    tags:
+      - Authentication
+    summary: OpenID Repository
+    parameters:
+      - in: path
+        name: object_id
+        required: true
+        description: ID of the OpenID Repository
+        schema:
+          type: string
+    responses:
+      200:
+        description: OpenID Repository
+        content:
+          application/json:
+            schema:
+              type: object
+              $ref: "./definitions/openid.yml"
+      404:
+        $ref: "../../global/definitions/notfound.yml"
+      500:
+        $ref: "../../global/definitions/error.yml"
+
+  put:
+    tags:
+      - Authentication
+    summary: Edit an OpenID
+    parameters:
+      - in: path
+        name: object_id
+        required: true
+        description: ID of the OpenID Repository
+        schema:
+          type: string
+    requestBody:
+      content:
+        application/json:
+          type: object_id
+          $ref: "./definitions/openid.yml"
+    responses:
+      201:
+        $ref: "../../global/definitions/created.yml"
+      400:
+        $ref: "../../global/definitions/error.yml"
+      500:
+        $ref: "../../global/definitions/error.yml"

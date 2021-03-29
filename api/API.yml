@@ -5,7 +5,7 @@ info:
 servers:
   - url: https://vulture.example:8000/api/v1
 
-tags: 
+tags:
   - name: PKI
   - name: ZFS
   - name: Node
@@ -22,90 +22,96 @@ tags:
 paths:
   /darwin/acl/:
     $ref: "./darwin/acl/acl.yml#/all"
-  
+
   /darwin/acl/{object_id}:
     $ref: "./darwin/acl/acl.yml#/one"
 
   /darwin/filter/:
-    $ref: './darwin/policy/filter.yml#/all'
-  
+    $ref: "./darwin/policy/filter.yml#/all"
+
   /darwin/filter/{object_id}/:
-    $ref: './darwin/policy/filter.yml#/one'
-  
+    $ref: "./darwin/policy/filter.yml#/one"
+
   /darwin/filter/types/:
-    $ref: './darwin/policy/filter.yml#/types'
-  
+    $ref: "./darwin/policy/filter.yml#/types"
+
   /darwin/filter/{filter_type}/{resssource}:
-    $ref: './darwin/policy/filter.yml#/ressources'
+    $ref: "./darwin/policy/filter.yml#/ressources"
 
   /darwin/policy/:
-    $ref: './darwin/policy/policy.yml#/all'
+    $ref: "./darwin/policy/policy.yml#/all"
 
   /darwin/policy/{object_id}/:
-    $ref: './darwin/policy/policy.yml#/one'
+    $ref: "./darwin/policy/policy.yml#/one"
 
   /darwin/policy/{object_id}/{action}/:
-    $ref: './darwin/policy/policy.yml#/action'
+    $ref: "./darwin/policy/policy.yml#/action"
 
   /system/config/:
-    $ref: './system/config/config.yml#/all'
+    $ref: "./system/config/config.yml#/all"
 
   /system/config/{list_type}/:
-    $ref: './system/config/config.yml#/wlbl'
+    $ref: "./system/config/config.yml#/wlbl"
 
   /system/node/:
-    $ref: './system/cluster/node.yml#/all'
-  
+    $ref: "./system/cluster/node.yml#/all"
+
   /system/node/{object_id}/:
-    $ref: './system/cluster/node.yml#/one'
+    $ref: "./system/cluster/node.yml#/one"
 
   /system/cluster/:
-    $ref: './system/cluster/cluster.yml'
+    $ref: "./system/cluster/cluster.yml"
 
   /system/netif/:
-    $ref: './system/cluster/network_cards.yml#/all'
+    $ref: "./system/cluster/network_cards.yml#/all"
 
   /system/netif/refresh/:
-    $ref: './system/cluster/network_cards.yml#/refresh'
-  
+    $ref: "./system/cluster/network_cards.yml#/refresh"
+
   /system/netaddr/:
-    $ref: './system/cluster/network_address.yml#/all'
+    $ref: "./system/cluster/network_address.yml#/all"
 
   /system/netaddr/{object_id}/:
-    $ref: './system/cluster/network_address.yml#/one'
+    $ref: "./system/cluster/network_address.yml#/one"
 
   /system/pki/get_ca:
-    $ref: './system/pki/pki.yml#/ca'
+    $ref: "./system/pki/pki.yml#/ca"
 
   /system/pki/get_cert:
-    $ref: './system/pki/pki.yml#/cert'
+    $ref: "./system/pki/pki.yml#/cert"
 
   /system/tenants:
-    $ref: './system/tenants/tenants.yml#/all'
+    $ref: "./system/tenants/tenants.yml#/all"
 
   /system/tenants/{object_id}:
-    $ref: './system/tenants/tenants.yml#/one'
+    $ref: "./system/tenants/tenants.yml#/one"
 
   /system/vm/:
-    $ref: './system/vm/vm.yml#/all'
-  
+    $ref: "./system/vm/vm.yml#/all"
+
   /system/vm/{object_id}:
-    $ref: './system/vm/vm.yml#/one'
+    $ref: "./system/vm/vm.yml#/one"
 
   /system/zfs/:
-    $ref: './system/zfs/zfs.yml#/all'
-  
+    $ref: "./system/zfs/zfs.yml#/all"
+
   /system/zfs/{object_id}:
-    $ref: './system/zfs/zfs.yml#/one'
+    $ref: "./system/zfs/zfs.yml#/one"
 
   /system/zfs/{object_id}/{action}:
-    $ref: './system/zfs/zfs.yml#/action'
+    $ref: "./system/zfs/zfs.yml#/action"
 
   /workflow/:
     $ref: "./workflow/workflow.yml#/all"
-  
+
   /workflow/{object_id}:
     $ref: "./workflow/workflow.yml#/one"
+
+  /authentication/openid/:
+    $ref: "./authentication/openid/openid.yml#/all"
+
+  /authentication/openid/{object_id}:
+    $ref: "./authentication/openid/openid.yml#/one"
 
   /authentication/idp/{object_id}:
     $ref: "./authentication/idp/idp.yml#/list"
@@ -115,7 +121,6 @@ paths:
 
   /authentication/idp/groups/{object_id}:
     $ref: "./authentication/idp/idp.yml#/group"
-
 # components:
 #   schemas:
 #     DarwinPolicy:

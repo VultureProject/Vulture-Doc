@@ -1,0 +1,44 @@
+properties:
+  name:
+    type: string
+  provider:
+    type: string
+    enum:
+      - google
+      - azure
+      - facebook
+      - github
+      - keycloak
+      - gitlab
+      - linkedin
+      - azureAD
+      - MazureAD
+      - openid
+      - gov
+      - nextcloud
+      - digitalocean
+      - bitbucket
+      - gitea
+      - digital_pass
+  provider_url:
+    type: string
+  client_id:
+    type: string
+  client_secret:
+    type: string
+  scopes:
+    type: dict
+  issuer:
+    type: string
+  authorization_endpoint:
+    type: string
+  token_endpoint:
+    type: string
+  userinfo_endpoint:
+    type: string
+  end_session_endpoint:
+    type: string
+  last_config_time:
+    type: datetime
+  is_alea:
+    type: string

@@ -22,7 +22,7 @@ list:
             - search
       - in: query
         name: group_name
-        description: "Groupe name to query. Required only if object_type is 'users'"
+        description: "Groupe name to query"
         schema:
           type: string
       - in: query
@@ -111,6 +111,25 @@ user:
                 type: string
                 description: User phone number
                 required: false
+              first_name:
+                type: string
+                description: User first name
+                required: false
+              last_name:
+                type: string
+                description: User last name
+                required: false
+              authorisations:
+                type: list
+                description: Authorisations list
+                required: false
+              user_type:
+                type: string
+                description: User type
+                required: true
+                oneof:
+                  - admin
+                  - user
               group:
                 type: string
                 description: User group
