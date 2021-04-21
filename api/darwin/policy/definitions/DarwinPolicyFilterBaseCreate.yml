@@ -71,6 +71,11 @@ properties:
     description: the number of entries the filter is able to cache for faster scoring
     example: 1337
     default: 0
+  call_condition:
+    type: string
+    description: (Advanced) Custom conditions to verify before calling the filter with Rsyslog
+    default: null
+    example: '$!proto == "tcp"'
   output:
     type: string
     enum:
