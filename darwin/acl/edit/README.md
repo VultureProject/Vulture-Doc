@@ -11,4 +11,4 @@ Here you don't define the action of the ACL. This is just a single rule not appl
 
 
 ---
-External Documentation: **[HAPROXY Documentation](https://www.haproxy.com/fr/blog/introduction-to-haproxy-acls/)**
+External Documentation: **[HAPROXY Documentation](https://www.haproxy.com/documentation/hapee/latest/onepage/#7)**
