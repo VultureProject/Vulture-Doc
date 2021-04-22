@@ -119,8 +119,8 @@ paths:
   /authentication/idp/users/{object_id}:
     $ref: "./authentication/idp/idp.yml#/user"
 
-  /authentication/idp/groups/{object_id}:
-    $ref: "./authentication/idp/idp.yml#/group"
+  /authentication/idp/users/{object_id}/{action}:
+    $ref: "./authentication/idp/idp.yml#/action"
 # components:
 #   schemas:
 #     DarwinPolicy:

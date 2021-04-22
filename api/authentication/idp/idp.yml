@@ -18,13 +18,7 @@ list:
           type: string
           enum:
             - users
-            - groups
             - search
-      - in: query
-        name: group_name
-        description: "Groupe name to query"
-        schema:
-          type: string
       - in: query
         name: search
         description: "Search string: Required only if object_type is search"
@@ -33,7 +27,7 @@ list:
 
     responses:
       200:
-        description: List of groups or users
+        description: List of users
         content:
           application/json:
             schema:
@@ -50,35 +44,60 @@ list:
       500:
         $ref: "../../global/definitions/error.yml"
 
-group:
+action:
   post:
     tags:
       - Authentication
-    summary: Create a group
+    summary: Lock/Unlock an user
     parameters:
       - in: path
         name: object_id
-        description: ID of the Portal
+        description: ID of the portal
         required: true
         schema:
           type: integer
           minimum: 1
+      - in: path
+        name: action
+        description: Action
+        required: true
+        schema:
+          type: string
+          enum:
+            - lock
+            - unlock
     requestBody:
       content:
         application/json:
           schema:
-            type: object
-            properties:
-              group_name:
-                type: string
-                description: Group Name
-                required: true
-              member:
-                description: Members
-                required: true
-                type: array
-                items:
+          type: object
+          properties:
+            username:
+              type: string
+              description: User name
+              required: true
+    responses:
+      200:
+        description: The command succeeded
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                status:
+                  type: boolean
+                  enum:
+                    - true
+                    - false
+                user_id:
                   type: string
+      400:
+        $ref: "../../global/definitions/error.yml"
+      404:
+        $ref: "../../global/definitions/error.yml"
+      500:
+        $ref: "../../global/definitions/error.yml"
+
 user:
   post:
     tags:
@@ -130,10 +149,6 @@ user:
                 oneof:
                   - admin
                   - user
-              group:
-                type: string
-                description: User group
-                required: true
               userPassword:
                 type: string
                 description: User password
@@ -248,9 +263,9 @@ user:
           schema:
             type: object
             properties:
-              user_id:
+              username:
                 type: string
-                description: User ID to delete
+                description: User name to delete
     responses:
       200:
         $ref: "../../global/definitions/ok.yml"
