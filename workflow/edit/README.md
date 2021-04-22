@@ -18,6 +18,8 @@ You can add as many **[ACLs](/darwin/acl/)** as you need, they will be configure
 
 Then select a **[Defender Policy](/darwin/defender_policy/)**. If you don't want a Policy, select the **No policy** entry.
 
+Then select a **[Authentication Portal](/portal/user_authentication/)**. If you don't want to enable authentication select the **No authentication** entry.
+
 You can add more **[ACL](/darwin/acl/)** after the **Defender Policy**, they will be configured in the **Backend configuration of HAProxy**.
 
 To finish the **Workflow** you will need to select a Backend 
