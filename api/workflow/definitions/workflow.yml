@@ -15,9 +15,6 @@ properties:
   public_dir:
     type: string
     description: Public Directory. Only if the frontend is in HTTP Mode
-  authentication:
-    type: integer
-    description: ID of the authentication portal
   defender_policy:
     type: integer
     description: ID of the Defender Policy
@@ -52,6 +49,9 @@ properties:
         redirect_url_not_satisfy:
           type: string
           description: URL to redirect to if action_not_satisfy in (301, 302)
+  authentication:
+    type: integer
+    description: ID of the Authentication Portal
   acl_backend:
     description: ACL after Defender Policy
     type: array
@@ -83,3 +83,7 @@ properties:
         redirect_url_not_satisfy:
           type: string
           description: URL to redirect to if action_not_satisfy in (301, 302)
+required:
+  - name
+  - frontend
+  - backend

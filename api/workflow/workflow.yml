@@ -14,7 +14,7 @@ all:
               items:
                 type: object
                 $ref: "./definitions/workflow.yml"
-    
+
   post:
     tags:
       - Workflow
@@ -25,7 +25,7 @@ all:
           schema:
             type: object
             $ref: "./definitions/workflow.yml"
-    
+
     responses:
       201:
         $ref: "../global/definitions/created.yml"
@@ -33,7 +33,7 @@ all:
         $ref: "../global/definitions/error.yml"
       500:
         $ref: "../global/definitions/error.yml"
-      
+
 one:
   get:
     tags:
@@ -46,7 +46,7 @@ one:
         description: ID of the worfklow
         schema:
           type: string
-    
+
     responses:
       200:
         description: Workflow object
@@ -72,14 +72,14 @@ one:
         description: ID of the workflow
         schema:
           type: string
-    
+
     requestBody:
       content:
         application/json:
           schema:
             type: object
             $ref: "./definitions/workflow.yml"
-    
+
     responses:
       201:
         $ref: "../global/definitions/created.yml"
@@ -99,13 +99,13 @@ one:
         description: ID of the workflow
         schema:
           type: string
-    
+
     responses:
       200:
-        $ref:  "../global/definitions/ok.yml"
+        $ref: "../global/definitions/ok.yml"
       400:
-        $ref:  "../global/definitions/error.yml"
+        $ref: "../global/definitions/error.yml"
       404:
-        $ref:  "../global/definitions/error.yml"
+        $ref: "../global/definitions/error.yml"
       409:
-        $ref:  "../global/definitions/error.yml"
+        $ref: "../global/definitions/error.yml"
