@@ -138,24 +138,31 @@ user:
                 type: string
                 description: User last name
                 required: false
-              authorisations:
-                type: list
-                description: Authorisations list
+              claim_list:
+                type: array
+                items:
+                  type: str
+                required: false
+              internal:
+                type: str
+                required: false
+                oneof:
+                  - "true"
+                  - "false"
+              smartcardid:
+                type: str
                 required: false
               user_type:
                 type: string
                 description: User type
-                required: true
+                required: false
                 oneof:
                   - admin
                   - user
+                  - superadmin
               userPassword:
                 type: string
                 description: User password
-                required: false
-              smartcardid:
-                type: string
-                description: User smart card ID
                 required: false
     responses:
       201:
@@ -219,10 +226,6 @@ user:
               userPassword:
                 type: string
                 description: User password
-                required: false
-              smartcardid:
-                type: string
-                description: User smart card ID
                 required: false
     responses:
       200:
