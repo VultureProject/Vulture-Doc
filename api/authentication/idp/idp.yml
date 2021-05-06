@@ -48,7 +48,7 @@ action:
   post:
     tags:
       - Authentication
-    summary: Lock/Unlock an user
+    summary: Lock, Unlock an user. Resend registration, Reset password & Reset OTP
     parameters:
       - in: path
         name: object_id
@@ -66,6 +66,9 @@ action:
           enum:
             - lock
             - unlock
+            - reset_password
+            - resend_registration
+            - reset_otp
     requestBody:
       content:
         application/json:
